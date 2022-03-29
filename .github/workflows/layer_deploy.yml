@@ -1,0 +1,73 @@
+name: "Python Common Layers"
+on:
+  push:
+    branches:
+      - main
+    paths:
+    - 'requirements.txt'
+    - '.github/workflows/layer_deploy.yml'
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 🐍
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install workflow dependencies 📦
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libpoppler-cpp-dev pkg-config python-dev
+          pip install --target=python boto3
+
+      - name: Install layer dependencies 📦
+        run: |
+          mkdir -p python
+          pip install --target=python -r requirements.txt
+          zip -r dependencies.zip ./python
+
+      - name: Publish layer 🚀
+        run: |
+          for region in us-east-2 us-east-1 us-west-1 us-west-2 af-south-1 ap-east-1 ap-southeast-3 ap-south-1 ap-northeast-3 ap-northeast-2 ap-southeast-1 ap-southeast-2 ap-northeast-1 ca-central-1 eu-central-1 eu-west-1 eu-west-2 eu-south-1 eu-west-3 eu-north-1 me-south-1 sa-east-1
+          do
+          result=$(aws lambda publish-layer-version \
+            --region $region \
+            --layer-name "common-python-libraries" \
+            --description "Common python libraries" \
+            --zip-file fileb://dependencies.zip \
+            --compatible-runtimes python3.6 python3.7 python3.8 python3.9)
+          
+          LAYER_VERSION=$(jq '.Version' <<< "$result")
+          LAYER_VERSION_ARN=$(jq '.LayerVersionArn' <<< "$result")
+          LAYER_ARN=$(jq '.LayerArn' <<< "$result")
+
+          echo "Latest version in $region is $LAYER_VERSION"
+
+          aws lambda add-layer-version-permission \
+            --region $region \
+            --layer-name "common-python-libraries" \
+            --statement-id public \
+            --action lambda:GetLayerVersion  \
+            --principal "*" \
+            --version-number $LAYER_VERSION
+          
+          sed -i -e "s/$LAYER_ARN:[0-9]/$LAYER_VERSION_ARN/g" "./README.md"
+          done
+
+      - name: Push README 📌
+        uses: stefanzweifel/git-auto-commit-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit_message: Update python lambda layer
+          branch: main
+          commit_user_name: python-layer 🤖
+          commit_user_email: actions@github.com
+          commit_author: python-layer 🤖 <actions@github.com>
