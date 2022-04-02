@@ -38,6 +38,14 @@ jobs:
       run: |
         python ./scripts/update-versions.py "common-python-libraries" "commonpythonlibraries"
 
+    - name: "Latest Version [common-python-libraries-database] 👀"
+      run: |
+        python ./scripts/update-versions.py "common-python-libraries-database" "commonpythonlibrariesdatabase"
+
+    - name: "Latest Version [common-python-libraries-datawrangling] 👀"
+      run: |
+        python ./scripts/update-versions.py "common-python-libraries-datawrangling" "commonpythonlibrariesdatawrangling"
+
     - name: "Update readme 📖"
       run: |
         python ./scripts/update-readme.py
