@@ -1,5 +1,8 @@
 [![auto-readme](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/auto-readme.yml/badge.svg)](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/auto-readme.yml)
 [![Python General Layers](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-general.yml/badge.svg?branch=main)](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-general.yml)
+[![Python Database Layers](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-database.yml/badge.svg)](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-database.yml)
+[![Python Data Wrangling Layers](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-datawrangling.yml/badge.svg)](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-datawrangling.yml)
+
 # Lambda layers
 Commonly used libraries packaged as lambda layers.
 
@@ -63,25 +66,25 @@ curl $URL -o layer.zip
 
 
 ### Data Wrangling 
- arn:aws:lambda:us-east-2:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:us-east-1:306986787463:layer:common-python-libraries-datawrangling:1  
+ arn:aws:lambda:us-east-2:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:us-east-1:306986787463:layer:common-python-libraries-datawrangling:2  
  arn:aws:lambda:us-west-1:306986787463:layer:common-python-libraries-datawrangling:1  
  arn:aws:lambda:us-west-2:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:af-south-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-east-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-southeast-3:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-south-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-northeast-3:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-northeast-2:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-southeast-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-southeast-2:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ap-northeast-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:ca-central-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:eu-central-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:eu-west-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:eu-west-2:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:eu-south-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:eu-west-3:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:eu-north-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:me-south-1:306986787463:layer:common-python-libraries-datawrangling:1  
- arn:aws:lambda:sa-east-1:306986787463:layer:common-python-libraries-datawrangling:1  
+ arn:aws:lambda:af-south-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-east-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-southeast-3:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-south-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-northeast-3:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-northeast-2:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-southeast-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-southeast-2:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ap-northeast-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:ca-central-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:eu-central-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:eu-west-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:eu-west-2:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:eu-south-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:eu-west-3:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:eu-north-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:me-south-1:306986787463:layer:common-python-libraries-datawrangling:2  
+ arn:aws:lambda:sa-east-1:306986787463:layer:common-python-libraries-datawrangling:2  
