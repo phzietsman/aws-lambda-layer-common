@@ -1,0 +1,17 @@
+[![auto-readme](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/auto-readme.yml/badge.svg)](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/auto-readme.yml)
+[![Python General Layers](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-general.yml/badge.svg?branch=main)](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-general.yml)
+# Lambda layers
+Commonly used libraries packaged as lambda layers.
+
+## Using 3rd party layers
+Use caution when including a third party layer in your application. To verify the content of a layer you can download the content and manually inspect it:
+```bash
+URL=$(aws lambda get-layer-version --layer-name $LAYER_ARN --version-number $LAYER_VERSION --query Content.Location --output text)
+curl $URL -o layer.zip
+```
+
+# Supported runtimes
+## python3
+### General 
+{% for arn in commonpythonlibraries %} {{arn}}  
+{% endfor %}

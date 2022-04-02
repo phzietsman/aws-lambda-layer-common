@@ -30,30 +30,25 @@ jobs:
       with:
         python-version: 3.9
 
-    - name: New Reame 📦
+    - name: Install pip packages 🧺
       run: |
-        cp -nf README.template README.md
+        pip install boto3 jinja2
 
-    - name: "Update readme [common-python-libraries] 📖"
+    - name: "Latest Version [common-python-libraries] 👀"
       run: |
-        for region in us-east-2 us-east-1 us-west-1 us-west-2 af-south-1 ap-east-1 ap-southeast-3 ap-south-1 ap-northeast-3 ap-northeast-2 ap-southeast-1 ap-southeast-2 ap-northeast-1 ca-central-1 eu-central-1 eu-west-1 eu-west-2 eu-south-1 eu-west-3 eu-north-1 me-south-1 sa-east-1
-        do
-        LAYER_VERSION=$(aws lambda list-layer-versions \
-          --layer-name common-python-libraries \
-          --region $region \
-          --query 'LayerVersions[0].LayerVersionArn')
-        
-        sed -i -e "s/%%$region%%common-python-libraries%%/$LAYER_VERSION_ARN/g" "./README.md"
+        python ./scripts/update-versions.py "common-python-libraries" "commonpythonlibraries"
 
-        done
+    - name: "Update readme 📖"
+      run: |
+        python ./scripts/update-readme.py
 
     - name: Push README 📌
       uses: stefanzweifel/git-auto-commit-action@v4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        commit_message: Update python lambda layer
+        commit_message: Update README.md
         branch: main
-        commit_user_name: python-layer 🤖
+        commit_user_name: auto-readme 🤖
         commit_user_email: actions@github.com
-        commit_author: python-layer 🤖 <actions@github.com>
+        commit_author: auto-readme 🤖 <actions@github.com>
