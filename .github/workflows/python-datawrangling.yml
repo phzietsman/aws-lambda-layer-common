@@ -1,4 +1,4 @@
-name: "Python datawrangling Layers"
+name: "Python Data Wrangling Layers"
 on:
   push:
     branches:
