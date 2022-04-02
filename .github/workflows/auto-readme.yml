@@ -1,5 +1,7 @@
 name: "auto-readme"
 on:
+  workflow_dispatch:
+
   schedule:
   # Example of job definition:
   # .---------------- minute (0 - 59)

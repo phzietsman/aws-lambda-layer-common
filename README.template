@@ -1,3 +1,4 @@
+[![Python General Layers](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-general.yml/badge.svg?branch=main)](https://github.com/phzietsman/aws-lambda-layer-common/actions/workflows/python-general.yml)
 # Lambda layers
 Commonly used libraries packaged as lambda layers.
 
@@ -10,26 +11,26 @@ curl $URL -o layer.zip
 
 # Supported runtimes
 ## python3
-### General
-%%sa-east-1%%common-python-libraries%%
-%%me-south-1%%common-python-libraries%%
-%%eu-north-1%%common-python-libraries%%
-%%eu-west-3%%common-python-libraries%%
-%%eu-south-1%%common-python-libraries%%
-%%eu-west-2%%common-python-libraries%%
-%%eu-west-1%%common-python-libraries%%
-%%eu-central-1%%common-python-libraries%%
-%%ca-central-1%%common-python-libraries%%
-%%ap-northeast-1%%common-python-libraries%%
-%%ap-southeast-2%%common-python-libraries%%
-%%ap-southeast-1%%common-python-libraries%%
-%%ap-northeast-2%%common-python-libraries%%
-%%ap-northeast-3%%common-python-libraries%%
-%%ap-southeast-3%%common-python-libraries%%
-%%ap-south-1%%common-python-libraries%%
-%%ap-east-1%%common-python-libraries%%
-%%af-south-1%%common-python-libraries%%
-%%us-west-2%%common-python-libraries%%
-%%us-west-1%%common-python-libraries%%
-%%us-east-1%%common-python-libraries%%
-%%us-east-2%%common-python-libraries%%
+### General 
+%%sa-east-1%%common-python-libraries%%  
+%%me-south-1%%common-python-libraries%%  
+%%eu-north-1%%common-python-libraries%%  
+%%eu-west-3%%common-python-libraries%%  
+%%eu-south-1%%common-python-libraries%%  
+%%eu-west-2%%common-python-libraries%%  
+%%eu-west-1%%common-python-libraries%%  
+%%eu-central-1%%common-python-libraries%%  
+%%ca-central-1%%common-python-libraries%%  
+%%ap-northeast-1%%common-python-libraries%%  
+%%ap-southeast-2%%common-python-libraries%%  
+%%ap-southeast-1%%common-python-libraries%%  
+%%ap-northeast-2%%common-python-libraries%%  
+%%ap-northeast-3%%common-python-libraries%%  
+%%ap-southeast-3%%common-python-libraries%%  
+%%ap-south-1%%common-python-libraries%%  
+%%ap-east-1%%common-python-libraries%%  
+%%af-south-1%%common-python-libraries%%  
+%%us-west-2%%common-python-libraries%%  
+%%us-west-1%%common-python-libraries%%  
+%%us-east-1%%common-python-libraries%%  
+%%us-east-2%%common-python-libraries%%  
