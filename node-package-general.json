@@ -1,0 +1,17 @@
+{
+  "name": "aws-lambda-layer-common",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phzietsman/aws-lambda-layer-common.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.27.2",
+    "uuid": "8.3.2",
+    "node-rsa": "1.1.1",
+    "aws-sdk": "2.1189.0",
+    "https": "1.0.0"
+  }
+}
