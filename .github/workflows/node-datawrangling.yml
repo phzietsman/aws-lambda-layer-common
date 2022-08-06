@@ -1,0 +1,90 @@
+name: "Node General Layers"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+    - 'node-package-datawrangling.json'
+    - '.github/workflows/node-general.yml'
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  LAYER_NAME: common-node-libraries-datawrangling
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        region: [
+          us-east-2,
+          us-east-1,
+          us-west-1,
+          us-west-2,
+          af-south-1,
+          ap-east-1,
+          ap-southeast-3,
+          ap-south-1,
+          ap-northeast-3,
+          ap-northeast-2,
+          ap-southeast-1,
+          ap-southeast-2,
+          ap-northeast-1,
+          ca-central-1,
+          eu-central-1,
+          eu-west-1,
+          eu-west-2,
+          eu-south-1,
+          eu-west-3,
+          eu-north-1,
+          me-south-1,
+          sa-east-1]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node 🐐
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install workflow dependencies 📦
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libpoppler-cpp-dev pkg-config python-dev
+          # pip install --target=python boto3
+
+      - name: Install layer dependencies 📦
+        run: |
+          mkdir -p nodejs
+          cp node-package-datawrangling.json nodejs/package.json
+          cd nodejs
+          npm install
+          cd ..
+          zip -r dependencies.zip ./nodejs
+
+      - name: Publish layer 🚀
+        env:
+          region: ${{ matrix.region }}
+        run: |
+          result=$(aws lambda publish-layer-version \
+            --region $region \
+            --layer-name "$LAYER_NAME" \
+            --description "Common node libraries" \
+            --zip-file fileb://dependencies.zip \
+            --compatible-runtimes nodejs16.x nodejs14.x nodejs12.x)
+          
+          LAYER_VERSION=$(jq '.Version' <<< "$result")
+          LAYER_VERSION_ARN=$(jq '.LayerVersionArn' <<< "$result")
+          LAYER_ARN=$(jq '.LayerArn' <<< "$result")
+
+          echo "Latest version in $region is $LAYER_VERSION"
+
+          result=$(aws lambda add-layer-version-permission \
+            --region $region \
+            --layer-name "$LAYER_NAME" \
+            --statement-id public \
+            --action lambda:GetLayerVersion  \
+            --principal "*" \
+            --version-number $LAYER_VERSION)
