@@ -6,7 +6,7 @@ on:
       - main
     paths:
     - 'node-package-datawrangling.json'
-    - '.github/workflows/node-general.yml'
+    - '.github/workflows/node-datawrangling.yml'
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
