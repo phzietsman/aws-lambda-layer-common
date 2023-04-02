@@ -93,28 +93,28 @@ curl $URL -o layer.zip
 
 ## node
 ### General
- arn:aws:lambda:us-east-2:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:us-east-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:us-west-1:306986787463:layer:common-node-libraries:3  
- arn:aws:lambda:us-west-2:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:af-south-1:306986787463:layer:common-node-libraries:5  
- arn:aws:lambda:ap-east-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:ap-southeast-3:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:ap-south-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:ap-northeast-3:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:ap-northeast-2:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:ap-southeast-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:ap-southeast-2:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:ap-northeast-1:306986787463:layer:common-node-libraries:5  
- arn:aws:lambda:ca-central-1:306986787463:layer:common-node-libraries:3  
- arn:aws:lambda:eu-central-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:eu-west-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:eu-west-2:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:eu-south-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:eu-west-3:306986787463:layer:common-node-libraries:3  
- arn:aws:lambda:eu-north-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:me-south-1:306986787463:layer:common-node-libraries:4  
- arn:aws:lambda:sa-east-1:306986787463:layer:common-node-libraries:4  
+ arn:aws:lambda:us-east-2:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:us-east-1:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:us-west-1:306986787463:layer:common-node-libraries:4  
+ arn:aws:lambda:us-west-2:306986787463:layer:common-node-libraries:5  
+ arn:aws:lambda:af-south-1:306986787463:layer:common-node-libraries:8  
+ arn:aws:lambda:ap-east-1:306986787463:layer:common-node-libraries:5  
+ arn:aws:lambda:ap-southeast-3:306986787463:layer:common-node-libraries:5  
+ arn:aws:lambda:ap-south-1:306986787463:layer:common-node-libraries:5  
+ arn:aws:lambda:ap-northeast-3:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:ap-northeast-2:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:ap-southeast-1:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:ap-southeast-2:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:ap-northeast-1:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:ca-central-1:306986787463:layer:common-node-libraries:5  
+ arn:aws:lambda:eu-central-1:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:eu-west-1:306986787463:layer:common-node-libraries:7  
+ arn:aws:lambda:eu-west-2:306986787463:layer:common-node-libraries:5  
+ arn:aws:lambda:eu-south-1:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:eu-west-3:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:eu-north-1:306986787463:layer:common-node-libraries:6  
+ arn:aws:lambda:me-south-1:306986787463:layer:common-node-libraries:5  
+ arn:aws:lambda:sa-east-1:306986787463:layer:common-node-libraries:6  
 
 
 ### Data Wrangling 
