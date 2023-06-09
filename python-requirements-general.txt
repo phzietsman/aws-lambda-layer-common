@@ -1,1 +1,3 @@
 requests==2.27.1
+mangum==0.17.0
+fastapi==0.96.0
