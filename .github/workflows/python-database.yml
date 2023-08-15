@@ -58,6 +58,11 @@ jobs:
           mkdir -p python
           pip install --target=python -r python-requirements-database.txt
           zip -r dependencies.zip ./python
+          pip install --platform manylinux2014_x86_64 \
+          --target=python \
+          --implementation cp \
+          --only-binary=:all: \
+          "psycopg[binary]"
 
       - name: Publish layer 🚀
         env:
