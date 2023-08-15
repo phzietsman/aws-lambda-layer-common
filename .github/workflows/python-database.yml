@@ -62,6 +62,7 @@ jobs:
           --target=python \
           --implementation cp \
           --only-binary=:all: \
+          --upgrade \
           "psycopg[binary]"
 
       - name: Publish layer 🚀
