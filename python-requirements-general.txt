@@ -3,4 +3,3 @@ mangum==0.17.0
 fastapi==0.96.0
 pyjwt==2.7.0
 paramiko==3.3.1
-cryptography==3.4.8
