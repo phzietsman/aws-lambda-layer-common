@@ -56,7 +56,7 @@ jobs:
       - name: Install layer dependencies 📦
         run: |
           mkdir -p python
-          pip install --platform manylinux2010_x86_64 --target=python -r python-requirements-general.txt
+          pip install --platform manylinux2010_x86_64 --only-binary=:all: --upgrade --target=python -r python-requirements-general.txt
           zip -r dependencies.zip ./python
 
       - name: Publish layer 🚀
