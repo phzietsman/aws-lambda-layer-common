@@ -3,3 +3,4 @@ mangum==0.17.0
 fastapi==0.96.0
 pyjwt==2.7.0
 pysftp==0.2.9
+pyHanko==0.21.0
