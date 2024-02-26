@@ -1,5 +1,4 @@
-requests==2.31.0
+requests==2.27.1
 mangum==0.17.0
 fastapi==0.96.0
 pyjwt==2.7.0
-pyhanko==0.21.0
